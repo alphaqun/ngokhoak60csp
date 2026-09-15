@@ -70,36 +70,19 @@ def compute_result(dice):
     return "tai" if total >= 11 else "xiu"
 
 
-def settle_round():
-    """Tung xúc xắc, xử lý toàn bộ cược đang chờ, lưu lịch sử."""
-    with lock:
-        dice = [random.randint(1, 6) for _ in range(3)]
-        result = compute_result(dice)
+def game_loop():
+    while True:
+        try:
+            remaining = game_state["next_roll_at"] - time.time()
 
-        for username, bet in pending_bets.items():
-            user = users.get(username)
-            if not user:
-                continue
-            amount = bet["amount"]
-            choice = bet["choice"]
-            # Lưu ý: số tiền cược đã bị trừ ngay lúc đặt cược (xem /api/bet).
-            # Thắng: hoàn lại vốn + 98% lợi nhuận (tổng nhận về = 1.98 x tiền cược).
-            # Thua: không hoàn lại gì (đã mất 100% số tiền cược).
-            if result != "bao" and choice == result:
-                user["balance"] += int(amount * (1 + WIN_MULTIPLIER))
+            if remaining > 0:
+                time.sleep(min(remaining, 1))
+            else:
+                settle_round()
 
-        history.insert(0, {
-            "dice": dice,
-            "sum": sum(dice),
-            "result": result,
-            "time": datetime.now().strftime("%H:%M:%S"),
-        })
-        del history[HISTORY_LIMIT:]
-
-        pending_bets.clear()
-        game_state["round_id"] = str(uuid.uuid4())
-        game_state["next_roll_at"] = time.time() + ROUND_SECONDS
-        save_data()
+        except Exception as e:
+            print("Lỗi game_loop:", e)
+            time.sleep(1)
 
 
 def game_loop():
