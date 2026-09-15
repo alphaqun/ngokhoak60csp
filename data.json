@@ -1,0 +1,124 @@
+{
+  "users": {
+    "K60tin1csp": {
+      "password": "123456789",
+      "balance": 100000000000
+    },
+    "emyeutinhoc": {
+      "password": "123456789",
+      "balance": 94800000
+    }
+  },
+  "history": [
+    {
+      "dice": [
+        4,
+        4,
+        3
+      ],
+      "sum": 11,
+      "result": "tai",
+      "time": "23:18:56"
+    },
+    {
+      "dice": [
+        4,
+        1,
+        2
+      ],
+      "sum": 7,
+      "result": "xiu",
+      "time": "23:17:56"
+    },
+    {
+      "dice": [
+        3,
+        4,
+        1
+      ],
+      "sum": 8,
+      "result": "xiu",
+      "time": "23:16:56"
+    },
+    {
+      "dice": [
+        6,
+        3,
+        4
+      ],
+      "sum": 13,
+      "result": "tai",
+      "time": "23:15:56"
+    },
+    {
+      "dice": [
+        3,
+        1,
+        2
+      ],
+      "sum": 6,
+      "result": "xiu",
+      "time": "23:14:56"
+    },
+    {
+      "dice": [
+        3,
+        1,
+        1
+      ],
+      "sum": 5,
+      "result": "xiu",
+      "time": "23:13:56"
+    },
+    {
+      "dice": [
+        3,
+        3,
+        5
+      ],
+      "sum": 11,
+      "result": "tai",
+      "time": "23:12:56"
+    },
+    {
+      "dice": [
+        5,
+        1,
+        3
+      ],
+      "sum": 9,
+      "result": "xiu",
+      "time": "23:09:46"
+    },
+    {
+      "dice": [
+        5,
+        1,
+        1
+      ],
+      "sum": 7,
+      "result": "xiu",
+      "time": "23:07:42"
+    },
+    {
+      "dice": [
+        4,
+        2,
+        6
+      ],
+      "sum": 12,
+      "result": "tai",
+      "time": "23:06:42"
+    },
+    {
+      "dice": [
+        2,
+        3,
+        3
+      ],
+      "sum": 8,
+      "result": "xiu",
+      "time": "23:05:42"
+    }
+  ]
+}

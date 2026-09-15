@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Tài Xỉu - Demo (tiền ảo)</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div id="auth-screen" class="screen">
+  <div class="card">
+    <h1>🎲 Tài Xỉu</h1>
+    <p class="hint">Không cổ xúy hành động đánh bạc-game được phát triển bởi Alphachan</p>
+    <input id="username" type="text" placeholder="Tên đăng nhập">
+    <input id="password" type="password" placeholder="Mật khẩu">
+    <div class="auth-buttons">
+      <button id="btn-login">Đăng nhập</button>
+      <button id="btn-register">Tạo tài khoản (nhận 50.000)</button>
+    </div>
+    <p id="auth-error" class="error"></p>
+  </div>
+</div>
+
+<div id="game-screen" class="screen hidden">
+  <div class="topbar">
+    <div>👤 <span id="me-username"></span></div>
+    <div>💰 Số dư: <span id="balance">0</span> đ</div>
+    <button id="btn-logout">Đăng xuất</button>
+  </div>
+
+  <div class="card round-card">
+    <div class="timer">Ván tiếp theo sau: <span id="countdown">--</span>s</div>
+    <div class="dice-row" id="dice-row">
+      <div class="die">?</div><div class="die">?</div><div class="die">?</div>
+    </div>
+    <div id="last-result" class="last-result"></div>
+  </div>
+
+  <div class="card">
+    <h3>Đặt cược</h3>
+    <div class="bet-amount-row">
+      <button id="btn-inc-bet">Mức cược: <span id="bet-level">1.000</span> đ ▲</button>
+    </div>
+    <div class="choice-row">
+      <button class="choice-btn tai" id="btn-tai">TÀI (11-18)</button>
+      <button class="choice-btn xiu" id="btn-xiu">XỈU (4-10)</button>
+    </div>
+    <p id="bet-status" class="hint"></p>
+    <p id="bet-error" class="error"></p>
+  </div>
+
+  <div class="card">
+    <h3>Lịch sử kết quả</h3>
+    <table id="history-table">
+      <thead><tr><th>Giờ</th><th>Xúc xắc</th><th>Tổng</th><th>Kết quả</th></tr></thead>
+      <tbody id="history-body"></tbody>
+    </table>
+  </div>
+</div>
+
+<script>window.__BET_LEVELS__ = {{ bet_levels | tojson }};</script>
+<script src="/static/script.js"></script>
+</body>
+</html>

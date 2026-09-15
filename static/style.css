@@ -1,0 +1,90 @@
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  background: linear-gradient(135deg, #1b1035, #0f1b3a);
+  color: #f0f0f5;
+  min-height: 100vh;
+  padding: 20px;
+}
+.hidden { display: none !important; }
+
+.card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 14px;
+  padding: 20px;
+  max-width: 480px;
+  margin: 16px auto;
+  backdrop-filter: blur(6px);
+}
+
+#auth-screen { display: flex; align-items: center; justify-content: center; min-height: 90vh; }
+h1 { text-align: center; margin-top: 0; }
+.hint { color: #b7b7cc; font-size: 13px; text-align: center; }
+.error { color: #ff6b7a; font-size: 13px; text-align: center; min-height: 18px; }
+
+input {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.2);
+  background: rgba(0,0,0,0.25);
+  color: white;
+  font-size: 15px;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-size: 15px;
+  font-weight: 600;
+  transition: transform 0.1s ease;
+}
+button:active { transform: scale(0.97); }
+
+.auth-buttons { display: flex; flex-direction: column; gap: 8px; margin-top: 10px; }
+#btn-login { background: #6c63ff; color: white; }
+#btn-register { background: #2ec27e; color: white; }
+
+.topbar {
+  max-width: 480px;
+  margin: 0 auto 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+}
+.topbar button { background: rgba(255,255,255,0.15); color: white; padding: 8px 12px; }
+
+.round-card { text-align: center; }
+.timer { font-size: 14px; color: #ffd479; margin-bottom: 10px; }
+.dice-row { display: flex; justify-content: center; gap: 12px; margin: 10px 0; }
+.die {
+  width: 56px; height: 56px;
+  background: white; color: #222;
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 26px; font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+}
+.last-result { margin-top: 8px; font-weight: bold; font-size: 16px; min-height: 22px; }
+
+.bet-amount-row { text-align: center; margin-bottom: 14px; }
+#btn-inc-bet { background: #ffb454; color: #2a1a00; width: 100%; }
+
+.choice-row { display: flex; gap: 10px; }
+.choice-btn { flex: 1; padding: 16px; font-size: 16px; color: white; }
+.choice-btn.tai { background: #e0433a; }
+.choice-btn.xiu { background: #2f7fe0; }
+.choice-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+th, td { padding: 6px 4px; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.1); }
+.tag-tai { color: #ff8a80; font-weight: bold; }
+.tag-xiu { color: #82b1ff; font-weight: bold; }
+.tag-bao { color: #ffd479; font-weight: bold; }
